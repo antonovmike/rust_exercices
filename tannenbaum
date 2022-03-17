@@ -1,0 +1,27 @@
+use std::thread;
+use std::time::Duration;
+fn main() {
+	tannenbaum(6);
+}
+
+fn tannenbaum(x: i32) {
+	let mut i = 1;
+	while i <= x {
+		for _empty_space in 0..(x-i) {
+			print!(" ");
+		}
+		for _left_side in 0..i {
+			print!("A");
+		}
+		for _right_side in 0..i {
+			print!("A");
+		}
+		println!();
+		thread::sleep(Duration::from_millis(120));
+		i += 1
+	}
+	for _stem in 0..(x-1) {
+		print!(" ");
+	}
+	println!("OO");
+}
