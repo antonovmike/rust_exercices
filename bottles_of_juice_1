@@ -1,0 +1,30 @@
+fn main() {
+    verse(10);
+}
+
+fn verse(n: u32) {
+    let mut i = n;
+    while i > 0 {
+        if i > 1 {
+        println!(
+"{} bottles of beer on the wall,
+{} bottles of juice.
+Take one down, pass it around,
+{} bottles of juice on the wall.",
+        i, i, i-1 ); } 
+        else {
+            println!(
+"{} bottle of juice on the wall,
+{} bottle of juice.
+Take one down, pass it around,
+no more bottles of juice on the wall.",
+                            i, i );
+        }
+            i = i - 1;
+    }
+    println!("
+No more bottles of juice on the wall,
+no more bottles of juice.
+Go to the store and buy some more,
+99 bottles of juice on the wall.");
+}

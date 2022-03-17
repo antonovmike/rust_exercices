@@ -1,0 +1,33 @@
+fn main() {
+	bottles(7);
+}
+
+fn bottles(x: i32) {
+	let mut index = x;
+	while index > 1 {
+	if (index - 1) > 2 { 
+		println!("
+{0} bottles of juice on the wall,
+{0} bottles of juice.
+You take one down, pass it around.
+{1} bottles of juice on the wall.
+		", index, (index-1) );
+	} else if (index - 1) > 1 {
+		println!("
+{0} bottles of juice on the wall,
+{0} bottles of juice.
+You take one down, pass it around.
+{1} bottle of juice on the wall.
+		", index, (index-1) );
+	} else {
+		println!("
+1 bottle of juice on the wall,
+1 bottle of juice.
+You take one down, pass it around.
+No bottles of beer on the wall..
+		");
+	}
+	index -= 1
+	}
+}
+

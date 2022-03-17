@@ -1,0 +1,29 @@
+// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711
+
+struct Fibonacci {
+    curr: u32,
+    next: u32,
+}
+
+impl Iterator for Fibonacci {
+    type Item = u32;
+    fn next(&mut self) -> Option<Self::Item> {
+        let new_next = self.curr + self.next;
+
+        self.curr = self.next;
+        self.next = new_next;
+
+        Some(self.curr)
+    }
+}
+
+fn fibonacci() -> Fibonacci {
+    Fibonacci { curr: 0, next: 1 }
+}
+
+fn main() {
+    println!("The next four terms of the Fibonacci sequence are: ");
+    for i in fibonacci().skip(0).take(20) {
+        println!("> {}", i);
+    }
+}
