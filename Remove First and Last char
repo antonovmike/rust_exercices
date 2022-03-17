@@ -1,0 +1,6 @@
+fn main() {
+	let mut a = "qwert".to_string();
+	a.remove(0);
+	a.remove( a.len() - 1 );
+	println!("{}", a);
+}
